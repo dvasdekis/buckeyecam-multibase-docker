@@ -24,14 +24,11 @@ RUN wget -O /tmp/mbse-latest.tbz -q http://www.buckeyecam.com/main/Files/mbse-13
 RUN chmod ugo+rx /usr/local/sbin/mbasectl
 RUN chmod -w /usr/local/sbin/mbasectl
 
-# # Copy config file to container
-COPY ./becmbse.conf /etc/becmbse.conf
-
 # Create a user called appuser (UID 1000) for Buckeye to run as 
 # and add user to default linux user group 'users' (GID 100)  
 RUN useradd -m -g 100 -u 1000 appuser
 # Switch Docker user to Appuser (rather than root) for security - disable for debug
-# USER appuser
+USER appuser
 
 # Make a directory for MBase to store its data
 RUN mkdir /home/appuser/mbasedata
