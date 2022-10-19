@@ -40,4 +40,4 @@ WORKDIR /usr/local/sbin
 
 # use for debugging with `docker build -t buckeye6 azure/qberd/containers/buckeye_cellbase && docker run -d buckeye6`
 # CMD ["sleep", "infinity"]
-CMD ["run_mbase", "-debug", "-d", "/home/appuser/mbasedata", "-u", "1000", "-g", "100", "-s"]
+CMD ["run_mbase", "-debug", "-d", "/home/appuser/mbasedata", "-u", "1000", "-g", "100"]
